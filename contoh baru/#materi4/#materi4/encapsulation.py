@@ -1,13 +1,10 @@
-class Mobil:
-    def __init__(self, merek, tahun):
-        self._merek = merek
-        self._tahun = tahun
+class Smartphone:
+    def __init__(self, brand, year):
+        self._brand = brand
+        self._year = year
         
     def __info(self):
-        print(f"Mobil: {self._merek} ({self._tahun})")
-        
-mobil1 = Mobil("Toyota", 2020)
-mobil1.info()  # output: Mobil: Toyota (2020)
+        print(f"Smartphone: {self._brand} ({self._year})")
 
-print(mobil1._merek)  # output: Toyota
-
+smartphone1 = Smartphone("Samsung", 2020)
+smartphone1._Smartphone__info()  # output: Smartphone: Sam

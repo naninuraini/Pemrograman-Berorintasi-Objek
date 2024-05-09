@@ -1,21 +1,20 @@
-class Mobil:
-    def __init__(self, merek, tahun):
-        self.__merek = merek
-        self.__tahun = tahun
+class Smartphone:
+    def __init__(self, brand, year, model):
+        self.__brand = brand
+        self.__year = year
+        self.__model = model
         
     def info(self):
-        print(f"Mobil: {self.__merek} ({self.__tahun})")
-        
-class Sport(Mobil):
-    def __init__(self, merek, tahun, top_speed):
-        super().__init__(merek, tahun)
-        self.__top_speed = top_speed
+        print(f"Smartphone: {self.__brand} ({self.__year}), Model: {self.__model}")
+
+class Flagship(Smartphone):
+    def __init__(self, brand, year, model, features):
+        super().__init__(brand, year, model)
+        self.__features = features
         
     def info(self):
         super().info()
-        print(f"Top speed: {self.__top_speed} km/h")
-        
-sport1 = Sport("Ferrari", 2021, 350)
-# print(sport1.__merek)  # error: 'Sport' object has no attribute '__merek'
-sport1.info()  # output: Mobil: Ferrari (2021)\nTop speed: 350 km/h
+        print(f"Features: {self.__features}")
 
+flagship1 = Flagship("Apple", 2021, "iPhone 13 Pro", "5G, A15 Bionic, ProMotion display")
+flagship1.info()

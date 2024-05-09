@@ -1,21 +1,20 @@
 from abc import ABC, abstractmethod
 
-class Hewan(ABC):
+class Product(ABC):
     @abstractmethod
-    def suara(self):
+    def description(self):
         pass
     
-class Kucing(Hewan):
-    def suara(self):
-        print("Meow")
+class Laptop(Product):
+    def description(self):
+        print("This is a powerful laptop for your everyday computing needs.")
         
-class Anjing(Hewan):
-    def suara(self):
-        print("Woof")
+class Smartphone(Product):
+    def description(self):
+        print("Stay connected on the go with this sleek and feature-rich smartphone.")
         
-kucing = Kucing()
-kucing.suara()  # output: Meow
+laptop = Laptop()
+laptop.description()  
 
-anjing = Anjing()
-anjing.suara()  # output: Woof
-
+smartphone = Smartphone()
+smartphone.description() 

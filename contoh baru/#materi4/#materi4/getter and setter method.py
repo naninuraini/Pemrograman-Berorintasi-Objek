@@ -1,25 +1,24 @@
-class Mobil:
-    def __init__(self, merek, tahun):
-        self._merek = merek
-        self._tahun = tahun
+class Smartphone:
+    def __init__(self, brand, year):
+        self._brand = brand
+        self._year = year
         
-    def get_merek(self):
-        return self._merek
+    def get_brand(self):
+        return self._brand
     
-    def set_merek(self, merek):
-        self._merek = merek
+    def set_brand(self, brand):
+        self._brand = brand
         
-    def get_tahun(self):
-        return self._tahun
+    def get_year(self):
+        return self._year
     
-    def set_tahun(self, tahun):
-        self._tahun = tahun
+    def set_year(self, year):
+        self._year = year
         
-mobil1 = Mobil("Toyota", 2020)
-print(mobil1.get_merek())  # output: Toyota
-mobil1.set_merek("Honda")
-print(mobil1.get_merek())  # output: Honda
-print(mobil1.get_tahun())  # output: 2020
-mobil1.set_tahun(2022)
-print(mobil1.get_tahun())  # output: 2022
-
+smartphone1 = Smartphone("Samsung", 2020)
+print(smartphone1.get_brand())  
+smartphone1.set_brand("Apple")
+print(smartphone1.get_brand())  
+print(smartphone1.get_year())   
+smartphone1.set_year(2022)
+print(smartphone1.get_year())   
