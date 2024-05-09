@@ -1,31 +1,31 @@
-class Kendaraan:
+class Produk:
     def __init__(self, merek, tahun):
         self.merek = merek
         self.tahun = tahun
     
     def info(self):
-        print(f"Kendaraan: {self.merek} ({self.tahun})")
+        print(f"Produk: {self.merek} ({self.tahun})")
         
-class Mobil(Kendaraan):
-    def __init__(self, merek, tahun, warna):
-        super().__init__(merek, tahun)
-        self.warna = warna
-
-    def info(self):
-        print(f"Mobil: {self.merek} ({self.tahun}) - Warna: {self.warna}")
-
-class Sepeda(Kendaraan):
+class Komputer(Produk):
     def __init__(self, merek, tahun, jenis):
         super().__init__(merek, tahun)
         self.jenis = jenis
         
     def info(self):
-        print(f"Sepeda: {self.merek} ({self.tahun}) - Jenis: {self.jenis}")
+        print(f"Komputer: {self.merek} ({self.tahun}) - Jenis: {self.jenis}")
+        
+class Handphone(Produk):
+    def __init__(self, merek, tahun, sistem_operasi):
+        super().__init__(merek, tahun)
+        self.sistem_operasi = sistem_operasi
+        
+    def info(self):
+        print(f"Handphone: {self.merek} ({self.tahun}) - Sistem Operasi: {self.sistem_operasi}")
 
-kendaraan1 = Kendaraan("Kendaraan", 2022)
-mobil1 = Mobil("Toyota", 2020, "Merah")
-sepeda1 = Sepeda("Polygon", 2021, "MTB")
+produk1 = Produk("Produk", 2022)
+komputer1 = Komputer("Asus", 2022, "Laptop")
+handphone1 = Handphone("Samsung", 2023, "Android")
 
-kendaraan1.info()  # output: Kendaraan: Kendaraan (2022)
-mobil1.info()      # output: Mobil: Toyota (2020) - Warna: Merah
-sepeda1.info()     # output: Sepeda: Polygon (2021) - Jenis: MTB
+produk1.info()     # output: Produk: Produk (2022)
+komputer1.info()  # output: Komputer: Asus (2022) - Jenis: Laptop
+handphone1.info() # output: Handphone: Samsung (2023) - Sistem Operasi: Android
