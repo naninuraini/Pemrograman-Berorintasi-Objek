@@ -10,3 +10,4 @@ mobil1 = Mobil("Toyota", 2020)
 mobil1.info()  # output: Mobil: Toyota (2020)
 
 print(mobil1._merek)  # output: Toyota
+
