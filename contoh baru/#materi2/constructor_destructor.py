@@ -1,29 +1,27 @@
-#Constructor dan Destructor
-#Penggunaan constructor
-class Manusia:
-    def __init__(self, nama, umur):
-        self.nama = nama
-        self.umur = umur
+# Konstruktor dan Destruktor untuk PenjualanAlatElektronik
+class PenjualanAlatElektronik:
+    # Atribut kelas
+    total_penjualan = 0
 
-    def info(self):
-        print(f"Nama: {self.nama}")
-        print(f"Umur: {self.umur}")
+    # Konstruktor
+    def __init__(self, nama_barang, harga, jumlah_terjual):
+        self.nama_barang = nama_barang
+        self.harga = harga
+        self.jumlah_terjual = jumlah_terjual
+        PenjualanAlatElektronik.total_penjualan += jumlah_terjual
 
-p = Manusia("John Doe", 25)
-p.info()
+    # Metode objek
+    def total_pendapatan(self):
+        return self.harga * self.jumlah_terjual
 
-# #Penggunaan dectructor
-# class Mobil:
-#     def __init__(self, merek, warna):
-#         self.merek = merek
-#         self.warna = warna
+    # Destruktor
+    def __del__(self):
+        PenjualanAlatElektronik.total_penjualan -= self.jumlah_terjual
 
-#     def __del__(self):
-#         print(f"{self.merek} {self.warna} dihapus")
+barang1 = PenjualanAlatElektronik("Laptop", 8000000, 10)
+barang2 = PenjualanAlatElektronik("Smartphone", 3000000, 20)
 
-# mobil1 = Mobil("Toyota", "Merah")
-# del mobil1
-
-
-
-
+print(barang1.nama_barang)
+print(barang2.total_penjualan)
+del barang1
+print(PenjualanAlatElektronik.total_penjualan)

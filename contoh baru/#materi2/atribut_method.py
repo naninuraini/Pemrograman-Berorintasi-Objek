@@ -1,84 +1,43 @@
-#class atribut
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+# Atribut dan metode kelas untuk PenjualanAlatElektronik
+class PenjualanAlatElektronik:
+    # Atribut kelas
+    total_penjualan = 0
 
-person1 = Person("John", 25)
-person2 = Person("Nani", 20)
+    def __init__(self, nama_barang, harga, jumlah_terjual):
+        self.nama_barang = nama_barang
+        self.harga = harga
+        self.jumlah_terjual = jumlah_terjual
+        PenjualanAlatElektronik.total_penjualan += jumlah_terjual
 
-print(person1.name)
-print(person2.age)
+    def tambah_penjualan(cls, jumlah):
+        cls.total_penjualan += jumlah
 
-#class method
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+    def reset_penjualan(cls):
+        cls.total_penjualan = 0
 
-    def greeting(self):
-        print("Hello, my name is", self.name, "and I am", self.age, "years old.")
+barang1 = PenjualanAlatElektronik("Laptop", 8000000, 10)
+barang2 = PenjualanAlatElektronik("Smartphone", 3000000, 20)
 
-person1 = Person("John", 25)
-person1.greeting()
-
-
-#Atribut dan metode kelas
-class Car:
-    # class attribute
-    brand = "Toyota"
-
-    def __init__(self, model, year):
-        self.model = model
-        self.year = year
-
-    # class method
-    @classmethod
-    def change_brand(cls, new_brand):
-        cls.brand = new_brand
-
-# create objects
-car1 = Car("Corolla", 2022)
-car2 = Car("Camry", 2021)
-
-# access class attribute
-print(car1.brand)  # output: Toyota
-print(car2.brand)  # output: Toyota
-
-# access and change class attribute
-print(Car.brand)  # output: Toyota
-Car.change_brand("Honda")
-print(Car.brand)  # output: Honda
-print(car1.brand)  # output: Honda
-print(car2.brand)  # output: Honda
+print(barang1.nama_barang)
+print(barang2.total_penjualan)
+PenjualanAlatElektronik.tambah_penjualan(5)
+print(PenjualanAlatElektronik.total_penjualan)
+PenjualanAlatElektronik.reset_penjualan()
+print(barang1.total_penjualan)
 
 
-#Intance atribut dan metode objek
-#Intance atribut
-class Mobil:
-    def __init__(self, merek, warna):
-        self.merek = merek
-        self.warna = warna
+# Instance atribut dan method objek untuk kelas PenjualanAlatElektronik
+class PenjualanAlatElektronik:
+    def __init__(self, nama_barang, harga, jumlah_terjual):
+        self.nama_barang = nama_barang
+        self.harga = harga
+        self.jumlah_terjual = jumlah_terjual
 
-mobil1 = Mobil('Toyota', 'Merah')
-mobil2 = Mobil('Honda', 'Hitam')
+    def total_pendapatan(self):
+        return self.harga * self.jumlah_terjual
 
-print(mobil1.merek) 
-print(mobil2.warna) 
+barang1 = PenjualanAlatElektronik("Laptop", 8000000, 10)
+barang2 = PenjualanAlatElektronik("Smartphone", 3000000, 20)
 
-#Intance method
-class Lingkaran:
-
-    def __init__(self, jari_jari):
-        self.jari_jari = jari_jari
-    
-    def luas(self):
-        return 3.14 * (self.jari_jari ** 2)
-    
-    def keliling(self):
-        return 2 * 3.14 * self.jari_jari
-
-lingkaran1 = Lingkaran(7)
-lingkaran2 = Lingkaran(14)
-
-print(lingkaran2.keliling())
+print(barang1.nama_barang)
+print(barang2.total_pendapatan())

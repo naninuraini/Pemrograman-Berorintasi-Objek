@@ -1,39 +1,28 @@
-# definisi kelas
-class Mahasiswa:
-    # atribut
-    nama = ""
-    nim = ""
-    jurusan = ""
+# Definisi kelas PenjualanAlatElektronik
+class PenjualanAlatElektronik:
+    # Atribut
+    total_penjualan = 0
 
-    # metode
-    def mendaftar(self):
-        print("Saya mendaftar mata kuliah.")
+    # Metode
+    def __init__(self, nama_barang, harga, jumlah_terjual):
+        self.nama_barang = nama_barang
+        self.harga = harga
+        self.jumlah_terjual = jumlah_terjual
+        PenjualanAlatElektronik.total_penjualan += jumlah_terjual
 
-    def mengambil_mata_kuliah(self, mata_kuliah):
-        print("Saya mengambil mata kuliah " + mata_kuliah)
-    
-    def melihat_nilai(self):
-        print("Saya melihat nilai mata kuliah.")
+    def total_pendapatan(self):
+        return self.harga * self.jumlah_terjual
 
-# membuat objek
-mahasiswa1 = Mahasiswa()
-mahasiswa1.nama = "Ari"
-mahasiswa1.nim = "12345"
-mahasiswa1.jurusan = "Informatika"
+    def tambah_penjualan(cls, jumlah):
+        cls.total_penjualan += jumlah
 
-# memanggil metode objek
-mahasiswa1.mendaftar()
-mahasiswa1.mengambil_mata_kuliah("Pemrograman Berorientasi Objek")
-mahasiswa1.melihat_nilai()
+# Membuat objek
+barang1 = PenjualanAlatElektronik("Laptop", 8000000, 10)
+barang2 = PenjualanAlatElektronik("Smartphone", 3000000, 20)
 
-# membuat objek lainnya
-mahasiswa2 = Mahasiswa()
-mahasiswa2.nama = "Budi"
-mahasiswa2.nim = "67890"
-mahasiswa2.jurusan = "Teknik Sipil"
-
-# memanggil metode objek lainnya
-mahasiswa2.mendaftar()
-mahasiswa2.mengambil_mata_kuliah("Konstruksi Bangunan")
-mahasiswa2.melihat_nilai()
-
+# Memanggil metode objek
+print(barang1.nama_barang)
+print(barang2.total_pendapatan())
+print(PenjualanAlatElektronik.total_penjualan)
+PenjualanAlatElektronik.tambah_penjualan(5)
+print(PenjualanAlatElektronik.total_penjualan)
